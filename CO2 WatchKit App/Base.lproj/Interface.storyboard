@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AJB-jz-ffb">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="CO2_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="HcA-K8-szV">
+            <objects>
+                <controller identifier="Home" id="AJB-jz-ffb" customClass="InterfaceController" customModule="CO2_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="130" height="95" alignment="left" text="Three Sense Activity" textAlignment="center" numberOfLines="2" id="hSJ-0o-wTt">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                        <button width="1" alignment="left" title="Start" id="3Xx-ng-PLx">
+                            <connections>
+                                <segue destination="yNH-7h-Y69" kind="push" id="eIL-Ja-nc7"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="action" destination="hSJ-0o-wTt" id="pQp-9v-qzc"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="351"/>
+        </scene>
+        <!--Sight View Controller-->
+        <scene sceneID="1mM-fw-bnX">
+            <objects>
+                <controller id="yNH-7h-Y69" customClass="SightViewController" customModule="CO2_WatchKit_Extension">
+                    <items>
+                        <label width="134" height="61" alignment="left" text="Name three things you see" textAlignment="center" numberOfLines="3" id="X3r-fo-yYx">
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                        </label>
+                        <group width="136" height="35" alignment="left" id="FIP-Yz-Ojy">
+                            <items>
+                                <label width="35" height="27" alignment="left" text="3" textAlignment="center" id="9gy-ZT-OJ5">
+                                    <fontDescription key="font" type="system" pointSize="23"/>
+                                </label>
+                                <label width="101" height="31" alignment="left" text="Remaining" id="phU-je-ABr"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Tap Me" id="wny-pZ-FW9">
+                            <connections>
+                                <action selector="tapped" destination="yNH-7h-Y69" id="WFT-Kv-Tfc"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="activityText" destination="X3r-fo-yYx" id="0fJ-4u-U3b"/>
+                        <outlet property="counter" destination="9gy-ZT-OJ5" id="Yod-ge-6EG"/>
+                        <outlet property="remaining" destination="phU-je-ABr" id="BSp-EW-bwr"/>
+                        <outlet property="tapOutlet" destination="wny-pZ-FW9" id="Id3-Q8-ovD"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="517" y="351"/>
+        </scene>
+        <!--AA-->
+        <scene sceneID="tsj-Dm-hZX">
+            <objects>
+                <controller identifier="AA" id="Yud-g8-6Vw">
+                    <items>
+                        <button width="1" alignment="left" title="Button" id="UOf-iK-e1A"/>
+                        <switch width="1" alignment="left" value="YES" title="Switch" id="Ryb-Qe-5EL"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="746" y="343"/>
+        </scene>
+    </scenes>
+</document>
